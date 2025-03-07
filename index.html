@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medicine Detection</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="top-bar">
+        <div class="logo">
+            <img src="pec.png" alt="Medicine Detection Logo">
+        </div>
+        <div class="language-selector">
+            <select id="languageSelect">
+                <option value="en">English</option>
+                <option value="ta">தமிழ்</option>
+                <option value="hi">हिंदी</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="description">
+            <h2>Description</h2><br>
+            <p>Illegible handwriting in medical prescriptions poses a safety risk and disrupts workflows. Patients can have confidence that the medications prescribed are precisely conveyed, reducing the risk of adverse effects due to misunderstandings or mistakes in dispensing. This study introduces accurately transcribe and validate handwritten text, reducing medication errors. The user-friendly interface empowers patients with comprehensive drug information and drug parameters, while robust language models enhance accuracy. The system offers a practical solution for safer prescriptions and streamlined pharmacy workflows. The project incorporates a patient-centric feature providing comprehensive drug information.</p>
+        </div>
+
+        <div class="upload-section">
+            <input type="file" id="imageUpload" accept="image/*">
+            <button onclick="uploadImage()">Upload & Detect</button>
+        </div>
+
+        <div id="result">
+            <h2>Extracted Medicine:</h2>
+            <p><strong>Name:</strong> <span id="medicineName">-</span></p>
+            <p><strong>Composition:</strong> <span id="medicineComposition">-</span></p>
+            <p><strong>Uses:</strong> <span id="medicineUses">-</span></p>
+            <p><strong>Side Effects:</strong> <span id="medicineSideEffects">-</span></p>
+            <p><strong>Manufacturer:</strong> <span id="medicineManufacturer">-</span></p>
+            <img id="medicineImage" src="" alt="Medicine Image" style="display: none; width: 200px;">
+        </div>
+
+        <div class="how-to-use">
+            <h3>How to Use:</h3>
+            <p>Step 1: Users can upload images of medical products using either their device's camera or by selecting files from their local storage. The supported image formats include JPG, PDF, and JPEG.</p>
+            
+            <p>Step 2: After the image is submitted, the application processes it and displays information about the medical product across seven different parameters:</p>
+            <ol>
+                <li>Composition: Details about the ingredients or components of the product.</li>
+                <li>Combination: Information regarding any combinations or formulations present in the product.</li>
+                <li>Usage: Guidance on how the product should be used or administered.</li>
+                <li>Side Effects: Potential adverse effects or reactions associated with the product.</li>
+                <li>Antibiotic or Probiotic: Indicates whether the product contains antibiotics, probiotics, or both.</li>
+                <li>Manufacturing: Details about the manufacturing process or company responsible for producing the product.</li>
+                <li>Product Details: Additional information about the product, such as dosage, indications, or warnings.</li>
+            </ol>
+
+            <p>Step 3: The output displayed to the user can be translated into their preferred language. This translation is available in both audio and text formats, providing accessibility to users who may prefer auditory or visual communication.</p>
+            
+            <p>By following these steps, users can easily obtain detailed information about medical products by simply uploading an image, and the application enhances accessibility by offering translations in multiple languages and formats.</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,372 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #2B6CB0;
+  --primary-hover: #2C5282;
+  --secondary-color: #4299E1;
+  --accent-color: #48BB78;
+  --background-color: #F7FAFC;
+  --card-background: #ffffff;
+  --text-primary: #2D3748;
+  --text-secondary: #4A5568;
+  --border-color: #E2E8F0;
+  --medical-blue: #2B6CB0;
+  --medical-green: #48BB78;
+  --medical-red: #F56565;
+  --medical-light-blue: #EBF8FF;
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+}
+
+body {
+  background-color:rgba(3, 50, 32, 0.899) /*no-repeat center center fixed*/;
+  background-size: cover;
+  animation: fadeIn 2s ease-in-out; /* Smooth fade-in effect */
+}
+
+.top-bar {
+  background-color: var(--card-background);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: var(--shadow-sm);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(8px);
+  background-color: rgba(255, 255, 255, 0.95);
+  border-bottom: 3px solid var(--medical-blue);
+}
+
+.logo img {
+  height: 70px;
+  width: 120px;
+  transition: transform 0.3s ease;
+  filter: drop-shadow(0 2px 4px rgba(43, 108, 176, 0.2));
+}
+
+.logo img:hover {
+  transform: scale(1.05);
+}
+
+.language-selector select {
+  padding: 0.7rem 1.2rem;
+  border: 2px solid var(--border-color);
+  border-radius: 8px;
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  background-color: var(--card-background);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%232B6CB0' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.7rem center;
+  background-size: 1.2em;
+  padding-right: 2.5rem;
+}
+
+.language-selector select:hover {
+  border-color: var(--medical-blue);
+  background-color: var(--medical-light-blue);
+}
+
+.language-selector select:focus {
+  outline: none;
+  border-color: var(--medical-blue);
+  box-shadow: 0 0 0 3px rgba(43, 108, 176, 0.1);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1.5rem;
+  text-align: center;
+}
+
+.description {
+  background-color: var(--card-background);
+  padding: 2.5rem;
+  border-radius: 16px;
+  margin-bottom: 2rem;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border-color);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.description::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(to bottom, var(--medical-blue), var(--secondary-color));
+}
+
+.description:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.upload-section {
+  background-color: var(--card-background);
+  padding: 3.5rem 2rem;
+  border-radius: 16px;
+  margin-bottom: 2rem;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border-color);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-image: linear-gradient(135deg, rgba(235, 248, 255, 0.5) 0%, rgba(255, 255, 255, 0.5) 100%);
+}
+
+.upload-section:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+h1 {
+  color: var(--text-primary);
+  margin-bottom: 2rem;
+  font-size: 2.5rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--medical-blue), var(--secondary-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: relative;
+  display: inline-block;
+}
+
+h1::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(to right, var(--medical-blue), var(--secondary-color));
+  border-radius: 2px;
+}
+
+input[type="file"] {
+  margin-bottom: 1.5rem;
+  padding: 1.5rem;
+  border: 2px dashed var(--medical-blue);
+  border-radius: 12px;
+  width: 100%;
+  max-width: 500px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background-color: var(--medical-light-blue);
+}
+
+input[type="file"]:hover {
+  border-color: var(--secondary-color);
+  background-color: rgba(66, 153, 225, 0.1);
+}
+
+button {
+  background: linear-gradient(135deg, var(--medical-blue), var(--secondary-color));
+  color: white;
+  padding: 1rem 2.5rem;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px -1px rgba(43, 108, 176, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: 0.5s;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 8px -1px rgba(43, 108, 176, 0.3);
+}
+
+button:hover::before {
+  left: 100%;
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+#result {
+  background-color: var(--card-background);
+  padding: 2.5rem;
+  border-radius: 16px;
+  margin-bottom: 2rem;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border-color);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  text-align: justify;
+}
+
+#result::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(to bottom, var(--medical-green), var(--accent-color));
+}
+
+#result:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+#result h2 {
+  color: var(--text-primary);
+  margin-bottom: 2rem;
+  font-size: 1.8rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+}
+
+#result h2::before {
+  content: '⚕';
+  margin-right: 0.5rem;
+  color: var(--medical-blue);
+}
+
+#result p {
+  margin-bottom: 1.2rem;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+}
+
+#result strong {
+  color: var(--text-primary);
+  font-weight: 600;
+  min-width: 120px;
+}
+
+.how-to-use {
+  background-color: var(--card-background);
+  padding: 2.5rem;
+  border-radius: 16px;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border-color);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  text-align: justify;
+}
+
+.how-to-use::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(to bottom, var(--medical-blue), var(--secondary-color));
+}
+
+.how-to-use:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.how-to-use h3 {
+  color: var(--text-primary);
+  margin-bottom: 2rem;
+  font-size: 1.8rem;
+  font-weight: 700;
+  display: flex;
+}
+
+.how-to-use h3::before {
+  content: '📋';
+  margin-right: 1.5rem;
+}
+
+.how-to-use p {
+  margin-bottom: 1.5rem;
+  color: var(--text-secondary);
+}
+
+.how-to-use ol {
+  margin-left: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.how-to-use li {
+  margin-bottom: 1rem;
+  color: var(--text-secondary);
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.how-to-use li::before {
+  content: '•';
+  color: var(--medical-blue);
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+}
+
+#medicineImage {
+  margin-top: 1.5rem;
+  border-radius: 12px;
+  box-shadow: var(--shadow-md);
+  transition: transform 0.3s ease;
+  border: 2px solid var(--medical-light-blue);
+}
+
+#medicineImage:hover {
+  transform: scale(1.02);
+  border-color: var(--medical-blue);
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1rem;
+  }
+  
+  h1 {
+    font-size: 2rem;
+  }
+  
+  .top-bar {
+    padding: 0.8rem 1rem;
+  }
+  
+  .description, .upload-section, #result, .how-to-use {
+    padding: 1.5rem;
+  }
+  
+  #result strong {
+    min-width: 100px;
+  }
+}
